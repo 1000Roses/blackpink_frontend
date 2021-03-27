@@ -1,30 +1,32 @@
 <template>
-    <div>
-        <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorFront, color: colorTextFront}" v-show="!isToggle" class="animated flipInX flashcard pt-3 mt-3 shadow">
-                <div >
-                    <img v-if="imgFront!=''" :src="imgFront" width="285" height="355">
-                    <div  class=' text-center d-flex align-self-end h3'>
-                        <span class="m-auto">{{front}}</span>
-                    </div> 
-                </div>
-        </div>
-        <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorBack, color: colorTextBack}" v-show="isToggle" class="animated flipInX flashcard pt-3 mt-3 shadow">
-                <div >
-                    <img v-if="imgFront!=''" :src="imgBack" width="285" height="355">
-                    <div  class=' text-center d-flex align-self-end h3'>
-                        <span class="m-auto">{{ back }}</span>
-                    </div> 
-                </div>
+<div>
+    <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorFront, color: colorTextFront}" v-show="!isToggle" class="animated flipInX flashcard pt-3 mt-3 shadow">
+        <div>
+            <img v-if="imgFront!=''" :src="imgFront" width="285" height="355">
+            <div class=' text-center d-flex align-self-end h3'>
+                <span class="m-auto">{{front}}</span>
+            </div>
         </div>
     </div>
+    <div @click="isToggle=!isToggle" v-bind:style="{backgroundColor: colorBack, color: colorTextBack}" v-show="isToggle" class="animated flipInX flashcard pt-3 mt-3 shadow">
+        <div>
+            <img v-if="imgFront!=''" :src="imgBack" width="285" height="355">
+            <div class=' text-center d-flex align-self-end h3'>
+                <span class="m-auto">{{ back }}</span>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
+
 <script>
 export default {
     data() {
         return {
             isToggle: false,
         }
-    }, props: {
+    },
+    props: {
         imgFront: {
             type: String,
             default: ''
@@ -65,13 +67,13 @@ export default {
             type: String,
             default: '#FFD1DC'
         },
-  
+
     }
 }
 </script>
+
 <style scoped>
 .flashcard {
-
     text-align: center;
 }
 
@@ -79,6 +81,7 @@ export default {
     animation-duration: 1s;
     animation-fill-mode: both;
 }
+
 @keyframes flipInX {
     from {
         transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -100,6 +103,7 @@ export default {
         transform: perspective(400px);
     }
 }
+
 .flipInX {
     backface-visibility: visible !important;
     animation-name: flipInX;
