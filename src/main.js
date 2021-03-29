@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import Login from './user/components/Login'
 import VueRouter from 'vue-router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
@@ -19,7 +20,8 @@ Vue.config.productionTip = false
 
 import Home from './home/components/Home.vue'
 const routes = [
-  { path: '', component: Home }
+  { path: '', component: Home },
+  { path: '/login', component: Login}
 ]
 
 const router = new VueRouter({

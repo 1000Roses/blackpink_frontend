@@ -15,6 +15,11 @@
                 <b-button variant="outline-success" class="my-2 my-sm-0" type="submit">Search</b-button>
             </b-nav-form>
 
+            <b-button variant="dark" class='border-success'>
+                <router-link to='login' class= 'text-success'> Login </router-link>
+
+                </b-button>
+
             <b-navbar-nav>
                 <b-nav-item-dropdown text="Account">
                     <b-dropdown-item href="#">Account</b-dropdown-item>
