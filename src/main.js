@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Login from './user/components/Login'
+import Register from './user/components/Register'
 import VueRouter from 'vue-router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
@@ -21,7 +24,8 @@ Vue.config.productionTip = false
 import Home from './home/components/Home.vue'
 const routes = [
   { path: '', component: Home },
-  { path: '/login', component: Login}
+  { path: '/login', component: Login},
+  { path: '/signup', component: Register}
 ]
 
 const router = new VueRouter({
